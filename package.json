@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aalextok/bitcoin-raw-transaction-example#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "bitcoin-core": "^2.0.0",
     "readline-async": "^0.1.0"
   }
