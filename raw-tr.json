@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "ins": [
+    {
+      "hash": "20ad5994df8d35c02439c83cc0b9dbd32e8a52b333ea89722954322f270b836a",
+      "index": 0,
+      "script": "",
+      "sequence": 4294967294,
+      "witness": ""
+    }
+  ],
+  "outs": [
+    {
+      "script": "76a91447e7f25ae071b97cb21f4783514b4eb4474d0f8a88ac",
+      "value": 100000
+    },
+    {
+      "script": "76a91493b9ad09670498efd5f3cd17fe9ae46a077844be88ac",
+      "value": 1103711
+    }
+  ]
+}

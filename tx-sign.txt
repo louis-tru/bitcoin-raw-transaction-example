@@ -1,0 +1,47 @@
+Signed transaction using the function:
+
+01000000 ................................... Version
+01 ......................................... Number of inputs
+
+956431812011527d7b357c683f8fccf8070aa193ddf15b433acad4ecd74a25ff   ......... Outpoint TXID
+01000000 ................................. Outpoint index number
+
+6b ....................................... Bytes in sig. script: 107
+  48 ..................................... Push 72 bytes as data
+    3045022100d8b8b6f6eb1691015d1296d287ae48eaf9db20c385b3b13f859993
+    a888f7bfdc02203c5a272d625df0c891dfb90f4fdf6fcb17fd07f6ed8dd26be6
+    679e6a31e5a0ff01
+  21 ..................................... Push 33 bytes as data
+    02826c32531a818994fccc72444789e458ee47ef68a7c39da349f7ea7deb3c391b ..................... [Secp256k1][secp256k1] signature
+
+ffffffff ................................. Sequence number: UINT32_MAX
+02
+00000000000000003776a914e37bcb36f9f9e07f063310265ccf0c937831e22988ac1c73706b7131903e9cf63ab2184db38033a79b8ca7a025260000000000
+7500000000000000003776a914a0d8d5bbb65b912fd8bb6809b3eb2ac349912e8f88ac1c73706b7131903e9cf63ab2184db38033a79b8ca7fc7d8005000000007500000000
+
+
+
+---------------------------------
+
+
+
+Signed transaction with API:
+
+01000000 ................................... Version
+01 ......................................... Number of inputs
+
+956431812011527d7b357c683f8fccf8070aa193ddf15b433acad4ecd74a25ff   ......... Outpoint TXID
+01000000 ................................. Outpoint index number
+
+6b ....................................... Bytes in sig. script: 107
+  48 ..................................... Push 72 bytes as data
+    304502210080ac8c015ca8ab92461860d4f7c6b9d531858c030116ebc586eb41
+    e6401c80b20220435a4d4c0d4278b3167a128d4c0374800d7d70291c2e82fea1
+    96523c58ec67bc01
+  21 ..................................... Push 33 bytes as data
+    0389c7fd04b9a3fc138b439f494df359a42c4e323bd6fecc96293f8a0a117c858e ..................... [Secp256k1][secp256k1] signature
+
+ffffffff ................................. Sequence number: UINT32_MAX
+02
+00000000000000003776a914e37bcb36f9f9e07f063310265ccf0c937831e22988ac1c73706b7131903e9cf63ab2184db38033a79b8ca7a025260000000000
+7500000000000000003776a914a0d8d5bbb65b912fd8bb6809b3eb2ac349912e8f88ac1c73706b7131903e9cf63ab2184db38033a79b8ca7fc7d8005000000007500000000

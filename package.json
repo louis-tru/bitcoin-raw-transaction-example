@@ -19,6 +19,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bitcoin-core": "^2.0.0",
-    "readline-async": "^0.1.0"
+    "readline-async": "^0.1.0",
+    "bitcoinjs-lib": "~5.1.10",
+    "regtest-client": "0.2.0",
+    "crypto-tx": "~0.2.13"
   }
 }
