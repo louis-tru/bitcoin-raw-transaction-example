@@ -3,21 +3,39 @@
   "locktime": 0,
   "ins": [
     {
-      "hash": "6a830b272f3254297289ea33b3528a2ed3dbb9c03cc83924c0358ddf9459ad20",
-      "index": 0,
-      "script": "47304402203fee1f1600b38d53d7097ac83687e2b21c15fd0c3bfa204dea143b51c087575c022038f9b2c348329eb7db9328d3b364dc80faecc826dd2b4951dbdcf53b1e7f54a2012103e04dbd719474dc76c94506eb24e03d71af2bb3a8a800b9730b5a391bb322044e",
-      "sequence": 4278190079,
+      "hash": "0ae88ef0f6be0b1d2bc44179974d651132d0e2a9b24bf68d3a28398f5b44ac05",
+      "index": 1,
+      "script": "473044022050225ef3c7687379e73a617ec3b1bc5739a9a0c1c974fa12e47c1bc353e1de5702207e021dc54225b982772efd8f1cb35616e9d9e407ad856e16a0ce74dd30ebfd43012103e04dbd719474dc76c94506eb24e03d71af2bb3a8a800b9730b5a391bb322044e",
+      "sequence": 4294967293,
+      "witness": ""
+    },
+    {
+      "hash": "1a4f9c0b31eb87f2c0cc6805be810e89578a01d678839bc36d77f6ad1aef9676",
+      "index": 1,
+      "script": "4730440220008fa50a0032f1a78eb3f622baa4ef5bbfbac49dfcb7456dd353db08243891ff0220220a2fb45a0d211e77484df8318f5191ffab9c988c3755328d0429625d01b312012103e04dbd719474dc76c94506eb24e03d71af2bb3a8a800b9730b5a391bb322044e",
+      "sequence": 4294967293,
+      "witness": ""
+    },
+    {
+      "hash": "db1d311ee99c3d9e16c1b7e4bd47528d53a6f2caf0c2da773b40a9e8e381b43d",
+      "index": 1,
+      "script": "483045022100dc130bdd9f6766c0a9d94ff887be1d40be7afa196caed33deaf34e94c1f7351602200a71420022d7758a662d3313e0051c022e0941fe68bbf6e5faa9cf8bff4727fb012103e04dbd719474dc76c94506eb24e03d71af2bb3a8a800b9730b5a391bb322044e",
+      "sequence": 4294967293,
       "witness": ""
     }
   ],
   "outs": [
+    {
+      "script": "6a0474657374",
+      "value": 0
+    },
     {
       "script": "76a91447e7f25ae071b97cb21f4783514b4eb4474d0f8a88ac",
       "value": 100000
     },
     {
       "script": "76a91493b9ad09670498efd5f3cd17fe9ae46a077844be88ac",
-      "value": 1103711
+      "value": 1084147
     }
   ]
 }

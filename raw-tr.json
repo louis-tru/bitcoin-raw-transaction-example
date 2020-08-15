@@ -3,21 +3,39 @@
   "locktime": 0,
   "ins": [
     {
-      "hash": "20ad5994df8d35c02439c83cc0b9dbd32e8a52b333ea89722954322f270b836a",
-      "index": 0,
+      "hash": "0ae88ef0f6be0b1d2bc44179974d651132d0e2a9b24bf68d3a28398f5b44ac05",
+      "index": 1,
       "script": "",
-      "sequence": 4294967294,
+      "sequence": 4294967293,
+      "witness": ""
+    },
+    {
+      "hash": "1a4f9c0b31eb87f2c0cc6805be810e89578a01d678839bc36d77f6ad1aef9676",
+      "index": 1,
+      "script": "",
+      "sequence": 4294967293,
+      "witness": ""
+    },
+    {
+      "hash": "db1d311ee99c3d9e16c1b7e4bd47528d53a6f2caf0c2da773b40a9e8e381b43d",
+      "index": 1,
+      "script": "",
+      "sequence": 4294967293,
       "witness": ""
     }
   ],
   "outs": [
+    {
+      "script": "6a0474657374",
+      "value": 0
+    },
     {
       "script": "76a91447e7f25ae071b97cb21f4783514b4eb4474d0f8a88ac",
       "value": 100000
     },
     {
       "script": "76a91493b9ad09670498efd5f3cd17fe9ae46a077844be88ac",
-      "value": 1103711
+      "value": 1084147
     }
   ]
 }

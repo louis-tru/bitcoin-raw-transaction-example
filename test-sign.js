@@ -3,17 +3,44 @@ var bitcoin = require('bitcoinjs-lib');
 var fs = require('fs');
 var btc = require('crypto-tx/btc');
 var buffer = require('somes/buffer').default;
+var TxBuild = require('./btc_tx').default;
+var crypto_tx = require('crypto-tx');
 
-function signTransaction(txHex, privateKey) {
-	var { mainnet } = btc.parseWIF(buffer.from(privateKey, 'base58'));
+class SignerIMPL {
+	constructor(privateKey) {
+		this._private = privateKey;
+		this.publicKey = crypto_tx.getPublic(privateKey, true);
+	}
+	async sign(message) {
+		var signature = crypto_tx.sign(message, this._private);
+		return signature.signature;
+	}
+}
+
+async function signTransaction(txHex, privateKey) {
+	var { mainnet, private } = btc.parseWIF(buffer.from(privateKey, 'base58'));
 	var network = mainnet ? bitcoin.networks.mainnet: bitcoin.networks.testnet;
-	var keyPair = bitcoin.ECPair.fromWIF(privateKey, network);
+	// var keyPair = bitcoin.ECPair.fromWIF(privateKey, network);
+	var keyPair = new SignerIMPL(private);
 
 	var tx = bitcoin.Transaction.fromHex(txHex);
-	var txb = bitcoin.TransactionBuilder.fromTransaction(tx, network);
+
+	// var psbt = new bitcoin.Psbt();
+	// psbt.version = tx.version;
+	// psbt.locktime = tx.locktime;
+	// for (var i of tx.ins) {
+	// 	psbt.addInput({ hash: i.hash, index: i.index, sequence: i.sequence });
+	// }
+	// for (var o of tx.outs) {
+	// 	psbt.addOutput({ script: o.script, value: o.value });
+	// }
+	// psbt.signAllInputs(keyPair);
+	// return psbt.toBase64();
+
+	var txb = TxBuild.fromTransaction(tx, network);
 
 	for (var i = 0; i < tx.ins.length; i++) {
-		txb.sign(i, keyPair);
+		await txb.signAsync(i, keyPair);
 	}
 
 	return txb.build().toHex();
@@ -65,12 +92,20 @@ function signTransaction2(tx_json, privateKey) {
 // address 1Mjpgtd8a996VCpz1xH1jHPYvBPiFXa8Gd
 // wif KwZFBkdzBEVNvwm2kHX8Abs2o9PZcoWnKbhAvaQGQdk3RY2WVxmG
 
-var privateKey = 'cVWobZH8WMCpdNpBnA8ED2NTbguxAvVmVTZ6mbVc8krumG8RGV5A';
+async function start() {
 
-var signed_tx = signTransaction(fs.readFileSync(`${__dirname}/raw-tr.hex`, 'utf8'), privateKey);
-// var signed_tx = signTransaction2(JSON.parse(fs.readFileSync(`${__dirname}/raw-tr.json`, 'utf8')), privateKey);
+	var privateKey = 'cVWobZH8WMCpdNpBnA8ED2NTbguxAvVmVTZ6mbVc8krumG8RGV5A';
 
-fs.writeFileSync(`${__dirname}/raw-tr2.hex`, signed_tx);
+	var signed_tx = await signTransaction(fs.readFileSync(`${__dirname}/raw-tr.hex`, 'utf8'), privateKey);
+	// var signed_tx = signTransaction2(JSON.parse(fs.readFileSync(`${__dirname}/raw-tr.json`, 'utf8')), privateKey);
 
-console.log('\nSigned transaction using the function:');
-console.log(signed_tx);
+	fs.writeFileSync(`${__dirname}/raw-tr2.hex`, signed_tx);
+
+	console.log('\nSigned transaction using the function:');
+	console.log(signed_tx);
+
+	require('./test-to-json');
+
+}
+
+start();
